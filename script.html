@@ -1,0 +1,16 @@
+<script>
+/* Add time to post dates */
+(function() {
+  function updateDates() {
+    document.querySelectorAll('time[data-ts]').forEach(function(el) {
+      var ts = parseInt(el.getAttribute('data-ts'));
+      if (ts && typeof dayjs !== 'undefined') {
+        var date = dayjs(ts * 1000);
+        el.textContent = date.format('MMM D, YYYY h:mm A');
+      }
+    });
+  }
+  setTimeout(updateDates, 500);
+  setTimeout(updateDates, 1500);
+})();
+</script>
