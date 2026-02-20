@@ -11,6 +11,9 @@ lang: en
 # Change to your timezone › https://zones.arilyn.cc
 timezone: America/Vancouver
 
+# Date format for posts - showing date and time
+date_format: "%B %d, %Y %I:%M %p"
+
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
