@@ -1,0 +1,17 @@
+<script>
+/* Add time to post dates */
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for dayjs to load
+  setTimeout(function() {
+    document.querySelectorAll('time[data-ts]').forEach(function(el) {
+      const ts = parseInt(el.getAttribute('data-ts'));
+      if (ts && window.dayjs) {
+        // Format: "Feb 20, 2026 12:30 AM"
+        const date = dayjs(ts * 1000);
+        const formatted = date.format('MMM D, YYYY h:mm A');
+        el.textContent = formatted;
+      }
+    });
+  }, 1000);
+});
+</script>

@@ -1,0 +1,20 @@
+<script>
+/* Add time to post dates */
+(function() {
+  function addTimeToDates() {
+    document.querySelectorAll('time[data-ts]').forEach(function(el) {
+      var ts = parseInt(el.getAttribute('data-ts'));
+      if (ts && window.dayjs) {
+        var date = dayjs(ts * 1000);
+        var formatted = date.format('MMM D, YYYY h:mm A');
+        el.textContent = formatted;
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addTimeToDates);
+  } else {
+    addTimeToDates();
+  }
+})();
+</script>
